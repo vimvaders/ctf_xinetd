@@ -6,18 +6,12 @@
 
 Put files to floder `bin`. They'll be copied to /home/ctf. **Update the flag** at the same time.
 
-Edit `ctf.xinetd`. replace `./helloworld` to your command.
+The executable file must be `bin/challenge`.
 
-You can also edit `Dockerfile, ctf.xinetd, start.sh` to custom your environment.
+You can also edit `Dockerfile, ctf.xinetd, start.sh` for custom your environment.
 
-## build
-
-```
-docker build -t "helloworld" .
-```
-
-## run
+## deploy
 
 ```
-docker run -d -p "0.0.0.0:pubport:9999" -h "helloworld" --name="helloworld" helloworld
+make run PORT=9998
 ```
