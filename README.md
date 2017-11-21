@@ -6,7 +6,7 @@
 
 Put files to floder `bin`. They'll be copied to /home/ctf. **Update the flag** at the same time.
 
-The executable file must be `bin/challenge`.
+The executable file must be `bin/challenge`. Libraries in `bin` will be linked first.
 
 You can also edit `Dockerfile, ctf.xinetd, start.sh` for custom your environment.
 
