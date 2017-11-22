@@ -1,4 +1,4 @@
-.PHONY: all build clean debug run
+.PHONY: all build clean debug run shell
 
 NAME := $(notdir $(patsubst %/,%,$(CURDIR)))
 PORT := 9999
@@ -9,6 +9,9 @@ all: run
 
 run: | stop build
 	docker run $(RUN_MODE) -p $(PORT):9999 --name $(NAME) $(NAME)
+
+shell:
+	docker exec -it $(NAME) /bin/bash
 
 build:
 	docker build -t $(NAME) .
