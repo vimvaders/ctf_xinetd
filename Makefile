@@ -1,4 +1,4 @@
-.PHONY: all build clean debug run shell
+.PHONY: all build clean debug run shell start
 
 NAME := $(notdir $(patsubst %/,%,$(CURDIR)))
 PORT := 9999
@@ -7,7 +7,7 @@ SHELL := /bin/bash
 
 all: run
 
-run: | stop build
+run start: | stop build
 	docker run $(RUN_MODE) -p $(PORT):9999 --name $(NAME) $(NAME)
 
 shell:
